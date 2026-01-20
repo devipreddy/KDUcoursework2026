@@ -29,12 +29,14 @@ public class BookingService{
             UUID.randomUUID().toString(),
             seatService.getNextSeat(),
             age,
+            UUID.randomUUID().toString(),
             Instant.now()
 
         );
 
         bkQueue.inventoryQueue.offer(ticket);
         bkQueue.notificationQueue.offer(ticket);
+        bkQueue.paymentQueue.offer(ticket);
 
         return ticket;
     }

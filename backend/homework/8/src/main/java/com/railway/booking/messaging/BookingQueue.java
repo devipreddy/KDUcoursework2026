@@ -14,7 +14,9 @@ public class BookingQueue {
 
     public final BlockingQueue<TicketBookedEvent> notificationQueue = new LinkedBlockingQueue<>();
 
-    public final BlockingQueue<TicketBookedEvent> deadLetterQueue = new LinkedBlockingQueue<TicketBookedEvent>(); 
+    public final BlockingQueue<TicketBookedEvent> deadLetterQueue = new LinkedBlockingQueue<>(); 
+
+    public final BlockingQueue<TicketBookedEvent> paymentQueue = new LinkedBlockingQueue<>();
     
 
 }

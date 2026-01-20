@@ -8,5 +8,6 @@ public record TicketBookedEvent(
         String bookingId,
         String seatNumber,
         int age,
+        String transactionId,
         Instant createdAt
 ) {}
