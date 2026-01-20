@@ -1,27 +1,68 @@
-# Compiled class file
+####################################
+# Java / Spring Boot
+####################################
 *.class
-
-# Log file
 *.log
 
-# BlueJ files
-*.ctxt
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Gradle (if ever used)
+.gradle/
+build/
 
-# Package Files #
+####################################
+# Package Files
+####################################
 *.jar
 *.war
-*.nar
 *.ear
+*.nar
 *.zip
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+####################################
+# IDEs
+####################################
+.idea/
+*.iml
+.vscode/
+
+####################################
+# OS (macOS)
+####################################
+.DS_Store
+.AppleDouble
+.LSOverride
+
+####################################
+# JVM crash logs
+####################################
 hs_err_pid*
 replay_pid*
 
-.idea
-.vscode
+####################################
+# BlueJ / J2ME
+####################################
+*.ctxt
+.mtj.tmp/
+
+####################################
+# Logs & Temp
+####################################
+logs/
+*.tmp
+*.swp
+
+####################################
+# Spring Boot
+####################################
+application-local.yml
+application-local.properties
+
+####################################
+# Test / Coverage
+####################################
+coverage/
