@@ -3,33 +3,70 @@ package com.railway.booking.consumer;
 import com.railway.booking.domain.TicketBookedEvent;
 import com.railway.booking.messaging.BookingQueue;
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class BookingDlqConsumer {
 
-    private final BookingQueue bkQueue;
+    private static final Logger log =
+            LoggerFactory.getLogger(BookingDlqConsumer.class);
 
-    public BookingDlqConsumer(BookingQueue bkQueue) {
-        this.bkQueue = bkQueue;
+    private final BookingQueue bookingQueue;
+    private final ExecutorService executor =
+            Executors.newSingleThreadExecutor(r ->
+                    new Thread(r, "dlq-consumer"));
+
+    public BookingDlqConsumer(BookingQueue bookingQueue) {
+        this.bookingQueue = bookingQueue;
     }
 
     @PostConstruct
     public void start() {
-        new Thread(() -> {
-            while (true) {
-                try {
-                    TicketBookedEvent bad =
-                            bkQueue.deadLetterQueue.take();
+        executor.submit(this::consumeDlq);
+    }
 
-                    System.err.println(
-                        "DLQ REVIEW → Booking "
-                        + bad.bookingId()
-                        + " Age=" + bad.age()
-                    );
+    private void consumeDlq() {
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
+                TicketBookedEvent event =
+                        bookingQueue.deadLetterQueue.take();
 
-                } catch (InterruptedException ignored) {}
+                log.warn(
+                    "DLQ REVIEW → bookingId={} age={}",
+                    event.bookingId(),
+                    event.age()
+                );
+
+                // Optional: route to metrics / audit store
+                // dlqAnalyzer.analyze(event);
+
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt(); // restore interrupt
+                log.info("DLQ consumer interrupted, shutting down");
+            } catch (Exception ex) {
+                log.error("Unexpected error while processing DLQ", ex);
             }
-        }, "dlq-consumer").start();
+        }
+    }
+
+    @PreDestroy
+    public void shutdown() {
+        log.info("Shutting down DLQ consumer");
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+            executor.shutdownNow();
+        }
     }
 }

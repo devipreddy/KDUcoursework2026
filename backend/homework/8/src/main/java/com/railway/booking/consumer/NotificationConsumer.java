@@ -4,40 +4,86 @@ import com.railway.booking.domain.TicketBookedEvent;
 import com.railway.booking.idempotency.ProcessedMessageStore;
 import com.railway.booking.messaging.BookingQueue;
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 @Component
-public class NotificationConsumer{
+public class NotificationConsumer {
 
-    private final BookingQueue bkQueue;
-    private final ProcessedMessageStore store;
+    private static final Logger log =
+            LoggerFactory.getLogger(NotificationConsumer.class);
 
-    public NotificationConsumer(BookingQueue bkQueue, ProcessedMessageStore store){
+    private final BookingQueue bookingQueue;
+    private final ProcessedMessageStore processedStore;
 
-        this.bkQueue = bkQueue;
-        this.store = store;
+    private final ExecutorService executor =
+            Executors.newSingleThreadExecutor(r ->
+                    new Thread(r, "notification-consumer"));
+
+    public NotificationConsumer(
+            BookingQueue bookingQueue,
+            ProcessedMessageStore processedStore
+    ) {
+        this.bookingQueue = bookingQueue;
+        this.processedStore = processedStore;
     }
 
     @PostConstruct
-    public void start(){
-        new Thread(() -> {
-            while(true){
-                try{
-                    TicketBookedEvent ticket = bkQueue.notificationQueue.take();
-                    if (store.isDuplicate(ticket.eventId())){
-                        continue;
-                    }
-
-                    System.out.println("Notification -> SMS Sent for booking" + ticket.eventId());
-
-                }
-                catch(InterruptedException i){
-
-                }
-
-            }
-
-        }, "notification - consumer").start();
+    public void start() {
+        executor.submit(this::consume);
     }
 
+    private void consume() {
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
+                TicketBookedEvent event =
+                        bookingQueue.notificationQueue.take();
+
+                if (processedStore.isDuplicate(event.eventId())) {
+                    log.debug(
+                        "Duplicate notification skipped for event {}",
+                        event.eventId()
+                    );
+                    continue;
+                }
+
+                sendNotification(event);
+
+                processedStore.markProcessed(event.eventId());
+
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+                log.info("NotificationConsumer interrupted, stopping");
+            } catch (Exception ex) {
+                log.error("Unexpected notification processing error", ex);
+            }
+        }
+    }
+
+    private void sendNotification(TicketBookedEvent event) {
+        log.info(
+            "Notification → SMS sent for booking {}",
+            event.bookingId()
+        );
+    }
+
+    @PreDestroy
+    public void shutdown() {
+        log.info("Shutting down NotificationConsumer");
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+            executor.shutdownNow();
+        }
+    }
 }
