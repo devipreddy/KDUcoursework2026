@@ -2,42 +2,67 @@ package com.railway.booking.service;
 
 import com.railway.booking.domain.TicketBookedEvent;
 import com.railway.booking.messaging.BookingQueue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.railway.booking.service.SeatService;
 
 import java.time.Instant;
 import java.util.UUID;
 
 @Service
-public class BookingService{
+public class BookingService {
 
-    private final BookingQueue bkQueue;
+    private static final Logger log =
+            LoggerFactory.getLogger(BookingService.class);
+
+    private final BookingQueue bookingQueue;
     private final SeatService seatService;
 
-
-    public BookingService(BookingQueue bkQueue, SeatService seatService){
-
-        this.bkQueue = bkQueue;
+    public BookingService(
+            BookingQueue bookingQueue,
+            SeatService seatService
+    ) {
+        this.bookingQueue = bookingQueue;
         this.seatService = seatService;
     }
 
-    public TicketBookedEvent bookTicket(int age){
+    public TicketBookedEvent bookTicket(int age) {
 
-        TicketBookedEvent ticket = new TicketBookedEvent(
+        validate(age);
 
-            UUID.randomUUID(),
-            UUID.randomUUID().toString(),
-            seatService.getNextSeat(),
-            age,
-            UUID.randomUUID().toString(),
-            Instant.now()
+        TicketBookedEvent event = createEvent(age);
 
+        publish(event);
+
+        log.info(
+            "Booking created with bookingId={} seat={}",
+            event.bookingId(),
+            event.seatNumber()
         );
 
-        bkQueue.inventoryQueue.offer(ticket);
-        bkQueue.notificationQueue.offer(ticket);
-        bkQueue.paymentQueue.offer(ticket);
+        return event;
+    }
 
-        return ticket;
+    private void validate(int age) {
+        if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative");
+        }
+    }
+
+    private TicketBookedEvent createEvent(int age) {
+        return new TicketBookedEvent(
+                UUID.randomUUID(),              // eventId
+                UUID.randomUUID().toString(),   // bookingId
+                seatService.getNextSeat(),
+                age,
+                UUID.randomUUID().toString(),   // transactionId
+                Instant.now()
+        );
+    }
+
+    private void publish(TicketBookedEvent event) {
+        bookingQueue.inventoryQueue.offer(event);
+        bookingQueue.notificationQueue.offer(event);
+        bookingQueue.paymentQueue.offer(event);
     }
 }
