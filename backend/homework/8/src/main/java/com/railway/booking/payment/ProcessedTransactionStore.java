@@ -12,6 +12,10 @@ public class ProcessedTransactionStore {
             ConcurrentHashMap.newKeySet();
 
     public boolean alreadyProcessed(String transactionId) {
-        return !processedTransactions.add(transactionId);
+        return processedTransactions.contains(transactionId);
+    }
+
+    public void markProcessed(String transactionId) {
+        processedTransactions.add(transactionId);
     }
 }

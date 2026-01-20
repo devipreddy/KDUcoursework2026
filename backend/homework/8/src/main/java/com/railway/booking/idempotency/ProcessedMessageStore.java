@@ -7,12 +7,16 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class ProcessedMessageStore{
+public class ProcessedMessageStore {
 
-    private final Set<UUID> processed = ConcurrentHashMap.newKeySet();
+    private final Set<UUID> processedEvents =
+            ConcurrentHashMap.newKeySet();
 
-    public boolean isDuplicate(UUID eventId){
+    public boolean isDuplicate(UUID eventId) {
+        return processedEvents.contains(eventId);
+    }
 
-        return (!processed.add(eventId));
+    public void markProcessed(UUID eventId) {
+        processedEvents.add(eventId);
     }
 }
