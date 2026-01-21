@@ -1,0 +1,37 @@
+
+schema{
+
+    query: Query
+    mutation: Mutation
+}
+
+type Movie{
+
+    id: ID!,
+    title: String!,
+    genre: String!,
+    comment: String,
+    rating: Int,
+    director: Director!
+}
+
+type Director{
+
+    id: ID!,
+    name: String!,
+    totalAwards: Int!
+}
+
+type Query {
+    findMovieById(id: ID!): Movie
+    getMovies: [Movie!]!
+}
+
+type Mutation{
+    addReview(id: ID!, input: AddRatings!): Movie
+}
+
+input AddRatings{
+    comment: String!,
+    rating: Int!
+}
