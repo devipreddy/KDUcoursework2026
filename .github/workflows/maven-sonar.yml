@@ -18,7 +18,7 @@ jobs:
         with:
           java-version: 17
       - name: Cache SonarQube packages
-        uses: actions/cache@v4
+        uses: actions/cache@v1
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
@@ -29,10 +29,10 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: >
-          cd ./backend/homework/8 && mvn install -DskipTests sonar:sonar 
+          cd ./backend/assignments/3 && mvn install -DskipTests sonar:sonar 
           -Dsonar.verbose=true 
-          -Dsonar.projectKey=${{ secrets.KDUER_NAME }}-BE-Homework-8
-          -Dsonar.projectName=${{ secrets.KDUER_NAME }}-BE-Homework-8
+          -Dsonar.projectKey=${{ secrets.KDUER_NAME }}-BE-Assignment-3
+          -Dsonar.projectName=${{ secrets.KDUER_NAME }}-BE-Assignment-3
       ## below steps are for posting comment on Github PR
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -52,7 +52,7 @@ jobs:
           PERSONAL_ACCESS_TOKEN_GITHUB: ${{ secrets.PERSONAL_ACCESS_TOKEN_GITHUB }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_PROJECT_KEY: ${{ secrets.KDUER_NAME }}-BE-Homework-8
+          SONAR_PROJECT_KEY: ${{ secrets.KDUER_NAME }}-BE-Assignment-3
           USERNAME_GITHUB: ${{ secrets.USERNAME_GITHUB }}
           REPO_NAME_GITHUB: ${{ secrets.REPO_NAME_GITHUB }}
           PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
