@@ -50,6 +50,7 @@ class ListRoomsWithDevicesIntegrationTest {
     @BeforeEach
     void setUp() {
         deviceRepository.deleteAll();
+        membershipRepository.deleteAll(); 
         roomRepository.deleteAll();
         houseRepository.deleteAll();
         inventoryRepository.deleteAll();
@@ -93,7 +94,7 @@ class ListRoomsWithDevicesIntegrationTest {
     void listRoomsWithDevices_returnsRooms() {
         House aHouse = houseRepository.findAll().stream().findFirst().orElseThrow();
 
-        ResponseEntity<Object[]> response = restTemplate.getForEntity("/" + aHouse.getHouseId() + "/rooms-with-devices", Object[].class);
+        ResponseEntity<Object[]> response = restTemplate.getForEntity("/houses/" + aHouse.getHouseId() + "/rooms-with-devices", Object[].class);
 
         assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
         assertThat(response.getBody()).isNotNull();

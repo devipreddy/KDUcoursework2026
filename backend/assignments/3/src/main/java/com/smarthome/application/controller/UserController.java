@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+
 
 import java.util.List;
 
 @RestController
-@org.springframework.validation.annotation.Validated
+@Validated
 @Tag(name = "User", description = "User-facing endpoints")
 public class UserController {
 

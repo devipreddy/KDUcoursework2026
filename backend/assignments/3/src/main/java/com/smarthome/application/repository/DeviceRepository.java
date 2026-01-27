@@ -20,9 +20,10 @@ public interface DeviceRepository extends JpaRepository<Device, Long> {
     @Query("SELECT d FROM Device d WHERE d.deletedDate IS NOT NULL")
     List<Device> findAllDeletedDevices();
 
-    @Query("SELECT d FROM Device d WHERE d.id = :id AND d.deletedDate IS NULL")
+    @Query("SELECT d FROM Device d WHERE d.deviceId = :id AND d.deletedDate IS NULL")
     Device findActiveDeviceById(@Param("id") Long id);
 
-    @Query("SELECT d FROM Device d WHERE d.deletedDate IS NOT NULL AND d.house.id = :houseId")
+    @Query("SELECT d FROM Device d WHERE d.deletedDate IS NOT NULL AND d.house.houseId = :houseId")
     List<Device> findAllDeletedDevicesByHouseId(@Param("houseId") Long houseId);
+
 }

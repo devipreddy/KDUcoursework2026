@@ -16,7 +16,6 @@ import java.util.HashSet;
 import java.util.Set;
 import jakarta.persistence.CascadeType;
 
-@Filter(name = "deletedFilter", condition = "deleted_date IS NULL")
 @Getter
 @Setter
 @AllArgsConstructor

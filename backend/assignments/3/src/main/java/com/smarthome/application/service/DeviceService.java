@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.smarthome.application.config.SecurityConstants;
 
 import java.util.List;
 import com.smarthome.application.exception.ResourceNotFoundException;
@@ -39,10 +40,11 @@ public class DeviceService {
     private SystemUser getCurrentUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        if (authentication == null || authentication.getName() == null ||authentication.getName().equals("anonymousUser")) {
+        if (authentication == null || authentication.getName() == null || authentication.getName().equals("anonymousUser")) {
 
             log.warn("No authentication found. Returning house admin user for tests.");
-            return userRepository.findByUsername("itest").orElseThrow(() -> new ResourceNotFoundException("Test user not found"));
+            return userRepository.findByUsername(SecurityConstants.DEFAULT_TEST_USER)
+                    .orElseThrow(() -> new ResourceNotFoundException("Test user not found"));
         }
 
 

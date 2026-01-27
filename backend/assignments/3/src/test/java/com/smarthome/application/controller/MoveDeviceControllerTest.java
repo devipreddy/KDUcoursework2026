@@ -51,7 +51,7 @@ class MoveDeviceControllerTest {
         when(deviceService.moveDeviceToAnotherRoom(eq(1L), eq(2L), any()))
                 .thenReturn(device);
 
-        mockMvc.perform(put("/1/devices/2/move-room")
+        mockMvc.perform(put("/houses/1/devices/2/move-room")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(Map.of("newRoomId", 3))))
                 .andExpect(status().isOk())
