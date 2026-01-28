@@ -1,0 +1,10 @@
+com/example/library/api/dto/response/LoanResponse.class
+com/example/library/api/dto/request/CreateBookRequest.class
+com/example/library/api/dto/response/UserResponse.class
+com/example/library/api/error/ErrorResponse.class
+com/example/library/api/dto/response/BookResponse.class
+com/example/library/api/enums/BookStatus.class
+com/example/library/api/error/ErrorResponse$FieldError.class
+com/example/library/api/dto/request/BorrowBookRequest.class
+com/example/library/api/dto/request/ReturnBookRequest.class
+com/example/library/api/enums/Role.class

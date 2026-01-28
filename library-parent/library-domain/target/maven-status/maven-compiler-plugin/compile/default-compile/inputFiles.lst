@@ -1,0 +1,8 @@
+/Users/deviprasadreddyp-kickdrum/Desktop/library-parent/library-domain/src/main/java/com/example/library/domain/entity/Book.java
+/Users/deviprasadreddyp-kickdrum/Desktop/library-parent/library-domain/src/main/java/com/example/library/domain/entity/Loan.java
+/Users/deviprasadreddyp-kickdrum/Desktop/library-parent/library-domain/src/main/java/com/example/library/domain/entity/User.java
+/Users/deviprasadreddyp-kickdrum/Desktop/library-parent/library-domain/src/main/java/com/example/library/domain/enums/BookStatus.java
+/Users/deviprasadreddyp-kickdrum/Desktop/library-parent/library-domain/src/main/java/com/example/library/domain/enums/Role.java
+/Users/deviprasadreddyp-kickdrum/Desktop/library-parent/library-domain/src/main/java/com/example/library/domain/repository/BookRepository.java
+/Users/deviprasadreddyp-kickdrum/Desktop/library-parent/library-domain/src/main/java/com/example/library/domain/repository/LoanRepository.java
+/Users/deviprasadreddyp-kickdrum/Desktop/library-parent/library-domain/src/main/java/com/example/library/domain/repository/UserRepository.java
