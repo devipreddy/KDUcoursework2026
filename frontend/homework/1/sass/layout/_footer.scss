@@ -1,0 +1,10 @@
+footer {
+  background: #111827;
+  color: $white;
+
+  padding: $xxl $lg;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $lg;
+}

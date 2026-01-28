@@ -1,0 +1,21 @@
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: $sm;
+}
+
+h3 {
+  margin-bottom: $xs;
+}
+
+p {
+  color: var(text-light);
+  margin-bottom: $md;
+}
+
+span {
+  color: $primary;
+}
