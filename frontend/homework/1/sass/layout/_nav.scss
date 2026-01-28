@@ -1,0 +1,27 @@
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: $md $lg;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: $md;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: $text-dark;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

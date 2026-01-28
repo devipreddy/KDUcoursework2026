@@ -1,0 +1,36 @@
+main > section:first-of-type {
+  max-width: 1200px;
+  margin: auto;
+  padding: $xxl $lg;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $xxl;
+
+  figure {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    margin-right: $sm;
+
+    background: $primary;
+    color: $white;
+
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: transform 0.2s ease;
+
+    &:last-child {
+      background: $secondary;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
