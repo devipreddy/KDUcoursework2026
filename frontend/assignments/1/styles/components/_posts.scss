@@ -1,0 +1,48 @@
+.posts-feed {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
+
+  border-bottom: 1px solid $border-dark;
+
+  .profile-photo img {
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .post-header {
+    color: $gray-text;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .post-body {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 10px;
+
+    button {
+      @include flex-center(6px);
+      @include button-reset;
+
+      color: gray;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+      filter: invert(70%);
+    }
+  }
+}
+
+.like-post.liked img {
+  filter: invert(25%) sepia(90%) saturate(5000%)
+    hue-rotate(330deg) brightness(100%);
+}

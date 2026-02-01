@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 280px 650px 360px;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.navigation-section {
+  padding: 25px 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-right: 1px solid #222;
+}
+.navigation-section .logo-img {
+  width: 40px;
+  margin-bottom: 35px;
+}
+.navigation-section nav {
+  flex: 1;
+}
+.navigation-section nav ul {
+  list-style: none;
+}
+.navigation-section nav ul li {
+  margin: 18px 0;
+}
+.navigation-section nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 19px;
+  color: white;
+  text-decoration: none;
+}
+.navigation-section nav ul li a:hover {
+  color: #1d9bf0;
+}
+.navigation-section .nav-icon {
+  width: 24px;
+  height: 24px;
+}
+.navigation-section .post-button {
+  width: 90%;
+  margin: 25px auto;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #1d9bf0;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+}
+.navigation-section .profile-section {
+  margin-top: auto;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #222;
+}
+.navigation-section .profile-section .profile-photo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.main-content {
+  background: black;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid #222;
+}
+
+.for-you-following-tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 18px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #222;
+}
+.for-you-following-tabs button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white;
+}
+.for-you-following-tabs button:hover {
+  color: #1d9bf0;
+}
+
+.tweet-box {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+  border-bottom: 1px solid #222;
+}
+.tweet-box .post-profile-photo img {
+  width: 50px;
+  border-radius: 50%;
+}
+.tweet-box .post-input {
+  width: 100%;
+}
+.tweet-box .post-input textarea {
+  width: 100%;
+  background: black;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  resize: none;
+  padding-top: 10px;
+}
+
+.right-sidebar {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 25px 18px;
+  border-right: 1px solid #222;
+}
+.right-sidebar > div {
+  margin-bottom: 20px;
+}
+.right-sidebar .subscribe-to-premium,
+.right-sidebar .todays-news,
+.right-sidebar .whats-happening,
+.right-sidebar .who-to-follow {
+  background: #111;
+  padding: 18px;
+  border-radius: 18px;
+}
+.right-sidebar ul {
+  list-style: none;
+  margin-top: 10px;
+}
+.right-sidebar ul li {
+  margin: 8px 0;
+}
+.right-sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+.right-sidebar ul li a:hover {
+  color: #1d9bf0;
+}
+
+.right-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.right-sidebar::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+.tweet-btn {
+  margin-top: 12px;
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  background: #1d9bf0;
+  color: white;
+  float: right;
+  cursor: pointer;
+}
+
+.subscribe-button {
+  width: 90%;
+  margin: 25px auto;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #1d9bf0;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+}
+
+.follow-button {
+  margin-left: auto;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.posts-feed {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
+  border-bottom: 1px solid #222;
+}
+.posts-feed .profile-photo img {
+  width: 50px;
+  border-radius: 50%;
+}
+.posts-feed .post-header {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.posts-feed .post-body {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.posts-feed .post-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 10px;
+}
+.posts-feed .post-actions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: gray;
+}
+.posts-feed .post-actions img {
+  width: 18px;
+  height: 18px;
+  filter: invert(70%);
+}
+
+.like-post.liked img {
+  filter: invert(25%) sepia(90%) saturate(5000%) hue-rotate(330deg) brightness(100%);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #111;
+  padding: 12px 15px;
+  border-radius: 30px;
+}
+.search-bar input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+}
+.search-bar img {
+  filter: invert(1);
+}
+
+.new-posts-actions img {
+  width: 22px;
+  height: 22px;
+  filter: invert(44%) sepia(92%) saturate(5000%) hue-rotate(185deg) brightness(95%) contrast(110%);
+}
+
+.new-posts-actions button {
+  background: black !important;
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.new-posts-actions button:hover {
+  background: #111;
+}
+
+.absolute-grok-chat {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
+.absolute-grok-chat button {
+  background: #1d9bf0;
+  border: none;
+  padding: 14px;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+.absolute-grok-chat img {
+  width: 20px;
+}
+
+.suggested-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  padding: 12px 0;
+}
+
+.suggested-profile:not(:last-child) {
+  border-bottom: 1px solid #222;
+}
+
+.suggested-profile .profile-photo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+@media (max-width: 500px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  .navigation-section,
+  .right-sidebar {
+    display: none;
+  }
+  .floating-tweet-box-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #1d9bf0;
+    padding: 18px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: white;
+  }
+  .tweet-box {
+    display: none;
+  }
+  .tweet-box.active {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,10 @@
+body {
+  font-family: Arial, sans-serif;
+  background: $bg-black;
+  color: $text-white;
+
+  display: grid;
+  grid-template-columns: 280px 650px 360px;
+  justify-content: center;
+  min-height: 100vh;
+}
