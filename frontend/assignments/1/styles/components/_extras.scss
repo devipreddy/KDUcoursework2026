@@ -1,0 +1,41 @@
+.new-posts-actions img {
+  width: 22px;
+  height: 22px;
+
+  filter: invert(44%) sepia(92%) saturate(5000%)
+    hue-rotate(185deg) brightness(95%) contrast(110%);
+}
+
+.new-posts-actions button {
+  background: black !important;
+  border: none;
+
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background: #111;
+  }
+}
+
+.absolute-grok-chat {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  button {
+    background: $blue;
+    border: none;
+
+    padding: 14px;
+    border-radius: 50%;
+
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  img {
+    width: 20px;
+  }
+}

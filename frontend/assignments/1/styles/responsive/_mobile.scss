@@ -1,0 +1,31 @@
+@media (max-width: 500px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .navigation-section,
+  .right-sidebar {
+    display: none;
+  }
+
+  .floating-tweet-box-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background: $blue;
+    padding: 18px;
+
+    border-radius: 50%;
+    font-size: 25px;
+    color: white;
+  }
+
+  .tweet-box {
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+  }
+}

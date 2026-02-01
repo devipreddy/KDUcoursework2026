@@ -1,0 +1,41 @@
+.tweet-btn {
+  margin-top: 12px;
+  padding: 10px 22px;
+
+  border-radius: 25px;
+  border: none;
+
+  background: $blue;
+  color: white;
+
+  float: right;
+  cursor: pointer;
+}
+
+.subscribe-button {
+  width: 90%;
+  margin: 25px auto;
+  padding: 14px;
+
+  border-radius: $radius-lg;
+  border: none;
+
+  background: $blue;
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+}
+
+.follow-button {
+  margin-left: auto;
+  padding: 6px 14px;
+
+  border-radius: 20px;
+  border: none;
+
+  background: white;
+  color: black;
+  cursor: pointer;
+}

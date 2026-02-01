@@ -1,0 +1,46 @@
+.right-sidebar {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 25px 18px;
+
+  border-right: 1px solid $border-dark;
+
+  > div {
+    margin-bottom: 20px;
+  }
+
+  .subscribe-to-premium,
+  .todays-news,
+  .whats-happening,
+  .who-to-follow {
+    @include card-box;
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 10px;
+
+    li {
+      margin: 8px 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.right-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.right-sidebar::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}

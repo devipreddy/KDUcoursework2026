@@ -1,0 +1,22 @@
+.search-bar {
+  @include flex-center(12px);
+
+  background: $card-bg;
+  padding: 12px 15px;
+
+  border-radius: $radius-lg;
+
+  input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: none;
+    color: white;
+  }
+
+  img {
+    filter: invert(1);
+  }
+}

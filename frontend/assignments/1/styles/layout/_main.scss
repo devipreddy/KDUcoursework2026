@@ -1,0 +1,58 @@
+.main-content {
+  background: $bg-black;
+  height: 100vh;
+  overflow-y: auto;
+
+  border-right: 1px solid $border-dark;
+}
+
+.for-you-following-tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 18px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  border-bottom: 1px solid $border-dark;
+
+  button {
+    @include button-reset;
+    color: white;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.tweet-box {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+
+  border-bottom: 1px solid $border-dark;
+
+  .post-profile-photo img {
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .post-input {
+    width: 100%;
+
+    textarea {
+      width: 100%;
+      background: black;
+
+      border: none;
+      outline: none;
+
+      color: white;
+      font-size: 18px;
+
+      resize: none;
+      padding-top: 10px;
+    }
+  }
+}
