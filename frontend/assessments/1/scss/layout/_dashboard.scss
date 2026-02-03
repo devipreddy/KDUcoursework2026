@@ -1,0 +1,28 @@
+main {
+    display: flex;
+    margin-top: 25px;
+    gap: 20px;
+}
+
+.mainbox {
+    width: 75%;
+}
+
+.side-bar {
+    width: 25%;
+    border: 1px solid $border-color;
+    padding: 20px;
+}
+
+.main-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.history-title {
+    font-size: 23px;
+    margin-bottom: 20px;
+}

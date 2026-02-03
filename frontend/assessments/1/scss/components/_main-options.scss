@@ -1,0 +1,38 @@
+#zomato {
+    border: 1px solid $border-color;
+    width: 220px;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    #zomato-logo {
+        width: 55px;
+        height: 55px;
+        object-fit: cover;
+    }
+}
+
+#current-price {
+    border: 1px solid $border-color;
+    padding: 20px;
+    width: 180px;
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+#price-value {
+    color: $green;
+    margin-left: 10px;
+}
+
+#quantity-input {
+    border: 1px solid $border-color;
+    width: 160px;
+    height: 55px;
+    padding: 20px;
+    font-size: 16px;
+}
