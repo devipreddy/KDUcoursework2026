@@ -29,7 +29,7 @@ jobs:
           cd ./frontend/assessments/1 && sonar-scanner \
             -Dsonar.projectKey=${{ secrets.KDUER_NAME }}-FE-Assessment-1 \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
       ## below steps are for posting analysis comment on Github PR
       - name: Setup Node
         uses: actions/setup-node@v3
