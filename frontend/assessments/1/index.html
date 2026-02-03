@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>KDU Stock Market Dashboard</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"/>
+  <link rel="stylesheet" href="styles/styles.css" />
+
+
+</head>
+
+<body>
+
+
+  <nav>
+    <h1>KDU Stock Market Dashboard</h1>
+
+  </nav>
+
+  <main>
+
+
+
+    <section class="mainbox">
+
+      <div class="main-options">
+
+
+        
+        <div id="zomato">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/af1307136664867.Y3JvcCw1NzUzLDQ1MDAsNDIsMA.jpg" alt="Zomato Logo" id="zomato-logo"/>
+          <h2>Zomato</h2>
+
+
+        </div>
+
+
+        <div id="current-price">
+          <h2>Price: <span id="price-value">99</span></h2>
+
+        </div>
+
+
+        <input id="quantity-input" type="number" placeholder="Enter Qty" min="1"/>
+
+        <button id="buy-button">Buy</button>
+        <button id="sell-button">Sell</button>
+
+
+      </div>
+
+
+      <div class="bar-graph">
+        <canvas id="price-chart"></canvas>
+      </div>
+
+
+    </section>
+
+
+
+    <aside class="side-bar">
+      <h2 class="history-title">History</h2>
+      <ul id="history-list"></ul>
+
+
+    </aside>
+
+  </main>
+
+
+  <script src="index.js"></script>
+
+
+</body>
+</html>

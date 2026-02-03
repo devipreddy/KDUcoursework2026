@@ -1,0 +1,31 @@
+#history-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+  li {
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        padding: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+  .content {
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 12px;
+        color: black;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+}

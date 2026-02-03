@@ -1,0 +1,16 @@
+#buy-button,
+#sell-button {
+    width: 65px;
+    height: 60px;
+    border: 1px solid $border-color;
+}
+
+#buy-button {
+    background: #b2f2bb;
+    border: 1px solid $green;
+}
+
+#sell-button {
+    background: #ffe9e9;
+    border: 1px solid $red;
+}
