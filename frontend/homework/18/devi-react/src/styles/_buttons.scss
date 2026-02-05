@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+.get-all-books-button,
+.get-available-books-button,
+.reset-filters-button,
+.search-submit-button,
+.year-search-submit-button {
+  padding: 8px 14px;
+  margin: 6px 6px 6px 0;
+  background-color: $blue-light;
+  border: 1px solid $blue-border;
+  color: $text-dark;
+}
+
+.get-available-books-button {
+  background-color: $green-light;
+  border-color: $green-border;
+}
+
+.reset-filters-button {
+  background-color: $red-light;
+  border-color: $red-border;
+}

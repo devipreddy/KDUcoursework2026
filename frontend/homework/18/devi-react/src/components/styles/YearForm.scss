@@ -1,0 +1,14 @@
+@use '../../styles/variables' as v;
+
+.year-form {
+  display: flex;
+  gap: v.$spacing;
+  margin-bottom: v.$spacing;
+}
+
+.start-year-field input,
+.end-year-field input {
+  padding: 8px;
+  border-radius: v.$radius;
+  border: 1px solid v.$blue-border;
+}
