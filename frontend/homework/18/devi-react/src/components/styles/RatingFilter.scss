@@ -1,0 +1,8 @@
+@use '../../styles/variables' as v;
+
+.rating-filter {
+  padding: 8px;
+  margin-right: 8px;
+  border-radius: v.$radius;
+  border: 1px solid v.$blue-border;
+}

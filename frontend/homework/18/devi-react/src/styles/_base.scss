@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: $white;
+  color: $text-dark;
+}
+
+button {
+  cursor: pointer;
+  border-radius: $radius;
+  border: 1px solid transparent;
+}

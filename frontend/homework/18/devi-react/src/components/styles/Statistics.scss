@@ -1,0 +1,8 @@
+@use '../../styles/variables' as v;
+
+.statistics {
+  padding: v.$spacing;
+  border-radius: v.$radius;
+  background-color: v.$blue-light;
+  border: 1px solid v.$blue-border;
+}

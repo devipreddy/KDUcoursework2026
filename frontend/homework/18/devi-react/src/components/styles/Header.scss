@@ -1,0 +1,7 @@
+@use '../../styles/variables' as v;
+
+.header {
+  padding: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid v.$blue-border;
+}

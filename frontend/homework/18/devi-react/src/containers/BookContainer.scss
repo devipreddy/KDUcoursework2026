@@ -1,0 +1,10 @@
+@use '../styles/variables' as v;
+
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;              // centers horizontally
+  padding: v.$spacing;
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing;
+}

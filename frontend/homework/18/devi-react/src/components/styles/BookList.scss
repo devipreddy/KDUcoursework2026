@@ -1,0 +1,27 @@
+@use '../../styles/variables' as v;
+
+.book-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$spacing;
+}
+
+.book-element {
+  padding: v.$spacing;
+  border-radius: v.$radius;
+  border: 1px solid v.$blue-border;
+  background-color: v.$blue-light;
+}
+
+.book-element.available {
+  background-color: v.$green-light;
+  border-color: v.$green-border;
+}
+
+
+.book-element.unavailable {
+  background-color: v.$red-light;
+  border-color: v.$red-border;
+}
