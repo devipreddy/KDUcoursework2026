@@ -1,0 +1,36 @@
+@use "variables" as v;
+
+.navigation-bar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e5e7eb;
+  background: white;
+
+  a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: v.$text-muted;
+    transition: v.$transition;
+
+    &.active {
+      color: v.$red-active;
+      font-weight: 600;
+    }
+
+    &:hover {
+      color: v.$blue-accent;
+    }
+  }
+}
+
+@media (max-width: v.$mobile) {
+  .navigation-bar {
+    height: 56px;
+  }
+
+  a {
+    font-size: 0.95rem;
+  }
+}
