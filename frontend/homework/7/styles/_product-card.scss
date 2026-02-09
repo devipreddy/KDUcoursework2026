@@ -1,0 +1,73 @@
+@use "variables" as v;
+
+.product-card {
+  background: v.$blue-soft;
+  border-radius: v.$radius-lg;
+  padding: 1.75rem 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: v.$transition;
+  box-shadow: v.$shadow-soft;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: v.$shadow-hover;
+  }
+
+  .thumbnail {
+    height: 180px;
+    object-fit: contain;
+    margin: 0 auto 1.2rem;
+    border-radius: v.$radius-md;
+    background: white;
+    padding: 1rem;
+  }
+
+  .product-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: v.$text-muted;
+    margin: 0.4rem 0;
+  }
+
+  .original {
+    text-decoration: line-through;
+    color: #94a3b8;
+    margin-right: 0.4rem;
+  }
+
+  b {
+    color: v.$blue-accent;
+    font-weight: 600;
+  }
+  .back-button {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: v.$text-muted;
+  font-size: 0.95rem;
+  transition: v.$transition;
+
+  &:hover {
+    color: v.$blue-accent;
+  }
+  }
+}
+
+@media (max-width: v.$mobile) {
+  .product-card {
+    padding: 1.5rem;
+  }
+
+  .thumbnail {
+    height: 150px;
+  }
+
+  .product-title {
+    font-size: 1rem;
+  }
+}
