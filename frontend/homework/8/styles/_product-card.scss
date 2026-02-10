@@ -1,0 +1,58 @@
+@use "variables" as v;
+
+.product-card {
+  background: #ffffff;
+  border-radius: v.$radius-lg;
+  padding: 2rem 1.6rem;
+  text-align: center;
+  cursor: pointer;
+
+  box-shadow: v.$shadow-soft;
+  transition: v.$transition;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: v.$shadow-hover;
+  }
+
+  .thumbnail {
+    height: 180px;
+    margin: 0 auto 1.6rem;
+    object-fit: contain;
+    background: none;
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: v.$blue-navy;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: v.$text-muted;
+  }
+
+  .original {
+    text-decoration: line-through;
+    color: v.$text-faint;
+  }
+
+  strong {
+    color: v.$blue-ocean;
+    font-size: 1.05rem;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: v.$mobile) {
+  .product-card {
+    padding: 1.6rem;
+  }
+
+  .thumbnail {
+    height: 150px;
+  }
+}
