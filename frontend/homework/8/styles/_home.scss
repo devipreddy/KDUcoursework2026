@@ -1,0 +1,27 @@
+@use "variables" as v;
+
+.home {
+  padding: 3rem 3.5rem;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+@media (max-width: v.$tablet) {
+  .home {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: v.$mobile) {
+  .home {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+}

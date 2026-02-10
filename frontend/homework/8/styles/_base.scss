@@ -1,0 +1,33 @@
+@use "variables" as v;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system;
+  background: v.$bg-main;
+  color: v.$text-main;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+
+@media (max-width: v.$mobile) {
+  body {
+    font-size: 15px;
+  }
+}

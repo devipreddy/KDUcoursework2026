@@ -1,0 +1,88 @@
+@use "variables" as v;
+
+.navigation-bar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3.5rem;
+
+  background: #ffffff;
+  border-bottom: 2px solid v.$border;
+
+  a {
+    font-size: 1rem;
+    font-weight: 700;
+    color: v.$blue-navy;
+
+    &.active {
+      color: v.$blue-ocean;
+    }
+
+    &:hover {
+      color: v.$blue-sky;
+    }
+  }
+
+  .search-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 420px;
+      padding: 0.75rem 3rem 0.75rem 1.25rem;
+
+      border-radius: v.$radius-lg;
+      border: 2px solid v.$border;
+
+      background: #ffffff;
+      font-size: 0.95rem;
+
+      &:focus {
+        outline: none;
+        border-color: v.$blue-sky;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.35);
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 1rem;
+      font-size: 0.9rem;
+      color: v.$text-faint;
+
+      &:hover {
+        color: v.$blue-sky;
+      }
+    }
+  }
+}
+
+@media (max-width: v.$tablet) {
+  .navigation-bar {
+    padding: 0 2rem;
+  }
+
+  .search-box input {
+    width: 300px;
+  }
+}
+
+@media (max-width: v.$mobile) {
+  .navigation-bar {
+    height: 56px;
+    padding: 0 1.25rem;
+  }
+
+  .search-box {
+    position: static;
+    transform: none;
+  }
+
+  .search-box input {
+    width: 220px;
+  }
+}
