@@ -1,0 +1,11 @@
+DEPARTMENT REPORT 
+
+Department: Sales
+Number of Employees: 2
+
+Employee List 
+- Eve Wilson: 55000
+- Henry Davis: 95000
+
+Total Salary: 150000
+Average Salary: 75000.00
