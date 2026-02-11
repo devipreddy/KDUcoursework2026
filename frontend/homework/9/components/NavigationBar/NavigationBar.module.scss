@@ -1,0 +1,57 @@
+@use "../../styles/variables" as v;
+
+.nav {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3.5rem;
+  background: #fff;
+  border-bottom: 2px solid v.$border;
+}
+
+.link {
+  font-weight: 700;
+  color: v.$blue-navy;
+}
+
+.active {
+  font-weight: 700;
+  color: v.$blue-ocean;
+}
+
+.searchBox {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.input {
+  width: 420px;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  border-radius: v.$radius-lg;
+  border: 2px solid v.$border;
+}
+
+.clearBtn {
+  position: absolute;
+  right: 1rem;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.08);
+  border-top-color: v.$blue-ocean;
+  animation: spin 800ms linear infinite;
+  position: absolute;
+  right: 2.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

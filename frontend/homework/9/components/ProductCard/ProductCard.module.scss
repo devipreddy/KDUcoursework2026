@@ -1,0 +1,42 @@
+@use "../../styles/variables" as v;
+
+.card {
+  background: #fff;
+  border-radius: v.$radius-lg;
+  padding: 2rem 1.6rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: v.$shadow-soft;
+  transition: v.$transition;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: v.$shadow-hover;
+}
+
+.thumbnail {
+  height: 180px;
+  margin: 0 auto 1.6rem;
+  object-fit: contain;
+}
+
+.original {
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+  color: v.$text-faint;
+}
+
+.price {
+  margin: 0.5rem 0;
+}
+
+.rating {
+  color: v.$text-faint;
+  font-size: 0.95rem;
+}
+
+.brand {
+  color: v.$text-muted;
+  font-size: 0.9rem;
+}

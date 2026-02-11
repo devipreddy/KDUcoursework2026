@@ -1,0 +1,62 @@
+@use "../../styles/variables" as v;
+
+.wrapper {
+  max-width: 1100px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.thumbRow {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.thumbRow {
+  border-top: 1px solid v.$border;
+  padding-top: 0.75rem;
+}
+
+.thumbRow button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.thumbRow button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.thumbRow button[aria-pressed="true"] img {
+  border: 2px solid v.$blue-ocean;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.18);
+}
+
+.original {
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+  color: v.$text-faint;
+}
+
+.addBtn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: v.$radius-md;
+  background: v.$blue-ocean;
+  color: white;
+  font-weight: 700;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.addBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: v.$shadow-hover;
+}
+

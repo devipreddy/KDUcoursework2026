@@ -1,0 +1,30 @@
+@use "../styles/variables" as v;
+
+.wrapper {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.backButton {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: v.$radius-md;
+  background: transparent;
+  border: 2px solid v.$border;
+  color: v.$blue-navy;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  margin-bottom: 0.5rem;
+}
+
+.backButton:hover {
+  transform: translateY(-3px);
+  box-shadow: v.$shadow-soft;
+  background: rgba(37, 99, 235, 0.04);
+}
+
+.backButton:active {
+  transform: translateY(0);
+}
