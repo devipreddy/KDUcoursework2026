@@ -1,0 +1,70 @@
+@use "../../styles/variables" as v;
+
+.userDetails {
+  max-width: 1100px;
+  margin: 3rem auto;
+}
+
+.headerRow {
+  margin-bottom: 2rem;
+}
+
+.backButton {
+  background: v.$blue-ocean;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: v.$radius-md;
+  transition: v.$transition;
+
+  &:hover {
+    background: v.$blue-sky;
+  }
+}
+
+.userCard {
+  display: flex;
+  gap: 3rem;
+  padding: 2.5rem;
+  background: v.$surface;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$border;
+  box-shadow: v.$shadow-soft;
+  align-items: center;
+}
+
+.userImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+.userContent {
+  flex: 1;
+}
+
+.userContent h2 {
+  margin-bottom: 1.5rem;
+  color: v.$blue-navy;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+.infoItem {
+  font-size: 0.95rem;
+  color: v.$text-muted;
+}
+
+.cacheBadge {
+  margin-bottom: 1rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #e6fffa;
+  color: #047857;
+  display: inline-block;
+}
