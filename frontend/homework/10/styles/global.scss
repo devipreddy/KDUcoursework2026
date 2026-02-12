@@ -1,0 +1,13 @@
+@use "./variables" as v;
+@use "./reset";
+
+body {
+  font-family: "Inter", system-ui, -apple-system;
+  background: v.$bg-main;
+  color: v.$text-main;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,57 @@
+@use "../../styles/variables" as v;
+
+.userForm {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem 3rem;
+  background: v.$surface;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$border;
+  box-shadow: v.$shadow-soft;
+}
+
+.userFormHeading {
+  margin-bottom: 2rem;
+  color: v.$blue-navy;
+}
+
+.formRow {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: v.$radius-md;
+  border: 1px solid v.$border;
+  font-size: 0.9rem;
+  transition: v.$transition;
+
+  &:focus {
+    outline: none;
+    border-color: v.$blue-ocean;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+}
+
+button {
+  padding: 0.85rem 1.8rem;
+  border-radius: v.$radius-md;
+  background: v.$blue-ocean;
+  color: white;
+  font-weight: 600;
+  transition: v.$transition;
+  white-space: nowrap;
+
+  &:hover {
+    background: v.$blue-sky;
+  }
+}
+
+.successMessage {
+  margin-top: 1rem;
+  color: #16a34a;
+  font-size: 0.85rem;
+}
