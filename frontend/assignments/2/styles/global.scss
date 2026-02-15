@@ -1,0 +1,39 @@
+@use "./variables" as *;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: auto; 
+}
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f7fafd;
+  color: $text-main;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;  
+  overflow-y: auto;    
+}
+
+
+h1, h2, h3 {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  color: $text-main;
+}
+
+p {
+  color: $text-muted;
+  line-height: 1.6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

@@ -1,0 +1,111 @@
+@use "../../styles/variables" as *;
+
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  padding: 80px 40px;
+}
+
+@media (max-width: $mobile) {
+  .pageContainer {
+    padding: 40px 16px;
+  }
+}
+
+.confirmationCard {
+  width: 640px;
+  max-width: 100%;
+  background: $surface;
+  border-radius: $radius-lg;
+  padding: 60px;
+  box-shadow: $shadow-soft;
+  text-align: center;
+}
+
+@media (max-width: $mobile) {
+  .confirmationCard {
+    padding: 32px 20px;
+  }
+}
+
+.successIcon {
+  font-size: 40px;
+  color: $blue-ocean;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: $text-main;
+}
+
+@media (max-width: $mobile) {
+  .title {
+    font-size: 22px;
+  }
+}
+
+.subtitle {
+  color: $text-muted;
+  margin-bottom: 24px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.statusBadge {
+  display: inline-block;
+  background: $blue-ocean;
+  color: white;
+  padding: 8px 18px;
+  border-radius: $radius-md;
+  font-size: 13px;
+  margin: 16px 0 32px;
+}
+
+.detailsSection {
+  text-align: left;
+  margin-top: 24px;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid $border;
+  font-size: 14px;
+  color: $text-muted;
+}
+
+@media (max-width: $mobile) {
+  .detailRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+.label {
+  font-weight: 500;
+  color: $text-faint;
+}
+
+.value {
+  font-weight: 600;
+  color: $text-main;
+}
+
+.actionButtons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: $mobile) {
+  .actionButtons {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

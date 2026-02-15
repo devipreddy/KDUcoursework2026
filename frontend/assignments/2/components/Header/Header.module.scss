@@ -1,0 +1,29 @@
+@use "../../styles/variables" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  background: $surface;
+  border-bottom: 1px solid $border;
+  padding: 22px 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: $mobile) {
+  .header {
+    padding: 16px;
+  }
+
+  .logo h2 {
+    font-size: 18px;
+  }
+
+  .contact span {
+    font-size: 14px;
+  }
+}
