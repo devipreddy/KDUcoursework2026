@@ -1,0 +1,247 @@
+@use "../../styles/variables" as *;
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;  
+  width: 100%;
+}
+
+
+section {
+  background: $surface;
+  border-radius: $radius-lg;
+  padding: 32px;
+  box-shadow: $shadow-soft;
+  transition: $transition;
+}
+
+ section:hover {
+ box-shadow: $shadow-hover;
+ }
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  color: $text-main;
+}
+
+
+.counterGroup {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.counterGroup label {
+  font-size: 15px;
+  color: $text-muted;
+}
+
+.counterControl {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.counterControl button {
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-md !important;
+  border: 1px solid $border !important;
+  background: $surface !important;
+  color: $blue-ocean !important;
+  font-weight: 600;
+}
+
+.counterControl input {
+  width: 32px;
+  border: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: $text-main;
+}
+.checkboxGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: $text-main;
+  margin-top: 12px;
+}
+
+.checkboxGroup input {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+}
+
+
+.textFieldWrapper {
+  margin-bottom: 28px;
+}
+
+.textFieldWrapper label {
+  display: block;
+  font-size: 14px;
+  color: $text-muted;
+  margin-bottom: 8px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: $radius-md;
+  border: 1px solid $border;
+  background: $surface;
+  font-size: 15px;
+  color: $text-main;
+  transition: $transition;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: $blue-ocean;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+  outline: none;
+}
+
+
+.preferenceGroup {
+  margin-bottom: 28px;
+}
+
+.groupLabel {
+  font-size: 14px;
+  color: $text-muted;
+  margin-bottom: 12px;
+}
+
+.optionsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.optionsWrapper :global(.MuiButton-root) {
+  border-radius: $radius-md !important;
+  border: 1px solid $border !important;
+  background: $surface !important;
+  color: $text-main !important;
+  padding: 10px 18px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.optionsWrapper :global(.MuiButton-root:hover) {
+  border-color: $blue-ocean !important;
+  color: $blue-ocean !important;
+  background: $surface !important;
+}
+
+.optionsWrapper :global(.MuiButton-contained) {
+  background: #e11d48 !important; 
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.25) !important;
+}
+
+.optionsWrapper :global(.MuiButton-root:active) {
+  transform: scale(0.97);
+}
+
+.dateTimeGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: $mobile) {
+  .dateTimeGroup {
+    grid-template-columns: 1fr;
+  }
+}
+
+.extrasSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.extraItem {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid $border;
+}
+
+.extraItem input {
+  accent-color: $blue-ocean;
+  width: 18px;
+  height: 18px;
+}
+
+.extraName {
+  font-size: 15px;
+  color: $text-main;
+}
+
+.extraPrice {
+  font-weight: 600;
+  color: #ef4444;
+}
+
+.errorMessage {
+  font-size: 13px;
+  color: #ef4444;
+  margin-top: 6px;
+}
+
+.submitButton {
+  margin-top: 16px !important;
+  height: 56px !important;
+  border-radius: $radius-md !important;
+  background: $blue-ocean !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px;
+  font-size: 15px !important;
+}
+
+.submitButton:hover {
+  background: $blue-sky !important;
+}
+
+@media (max-width: $mobile) {
+
+  section {
+    padding: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .counterGroup {
+    gap: 12px;
+  }
+
+  .dateTimeGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .optionsWrapper {
+    gap: 10px;
+  }
+
+  .submitButton {
+    padding: 16px !important;
+  }
+}

@@ -1,0 +1,116 @@
+@use "../../styles/variables" as *;
+
+.summaryWrapper {
+  position: sticky;
+  top: 120px; 
+}
+
+.summaryCard {
+  background: $surface;
+  border-radius: $radius-lg;
+  padding: 36px;
+  box-shadow: $shadow-soft;
+}
+
+@media (max-width: $tablet) {
+  .summaryWrapper {
+    position: static;
+  }
+}
+
+
+@media (max-width: $mobile) {
+  .summaryCard {
+    padding: 24px;
+  }
+}
+
+.summaryCard h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: $text-main;
+}
+
+.sectionDivider {
+  border: none;
+  border-top: 1px solid $border;
+  margin: 16px 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailItem {
+  padding: 12px 0;
+  border-bottom: 1px solid $border;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: 14px;
+  color: $text-muted;
+}
+
+.value {
+  font-weight: 600;
+  color: $text-main;
+}
+
+.extrasList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.extraItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.name {
+  color: $text-main;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.priceSection {
+  margin-top: 20px;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.subtotal {
+  color: $text-muted;
+}
+
+.discount {
+  color: #ef4444;
+}
+
+.total {
+  font-weight: 700;
+  font-size: 16px;
+  color: $blue-ocean;
+}
+
+.tooltip {
+  margin-top: 20px;
+  font-size: 13px;
+  color: $text-faint;
+  line-height: 1.5;
+}

@@ -1,0 +1,24 @@
+@use "../../styles/variables" as *;
+
+.pageContainer {
+  display: flex;
+  gap: 48px;
+}
+
+.formSection {
+  flex: 1;
+}
+
+.summarySection {
+  width: 380px;
+}
+
+@media (max-width: $tablet) {
+  .pageContainer {
+    flex-direction: column;
+  }
+
+  .summarySection {
+    width: 100%;
+  }
+}
